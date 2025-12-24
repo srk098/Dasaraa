@@ -228,22 +228,23 @@ const ContactPage = () => {
           </form>
         </motion.div>
 
+
+
         {/* RIGHT – INFO */}
         <motion.div
-          className="w-full flex flex-col items-center text-center space-y-10"
+          className="w-full flex flex-col items-center text-center"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <div>
+          {/* OPENING HOURS */}
+          <div className="w-full mb-10">
             <h2 className="font-bold text-secondary mb-4">Opening Hours</h2>
 
-            {/* Decorative border */}
             <div className="flex justify-center mb-6">
               <img
                 src="/Images/heading_main.PNG"
                 alt="decor border"
                 className="w-full max-w-[95%] sm:max-w-[90%] md:max-w-[80%]"
-
               />
             </div>
 
@@ -274,9 +275,21 @@ const ContactPage = () => {
             )}
           </div>
 
+          {/* RESTAURANT ADDRESS */}
           {restaurantInfo?.address?.active && (
-            <div>
-              <h3 className="font-semibold text-lg">Restaurant Address</h3>
+            <div className="w-full mb-5">
+              <h2 className="font-bold text-secondary mb-4">
+                Restaurant Address
+              </h2>
+
+              <div className="flex justify-center mb-6">
+                <img
+                  src="/Images/heading_main.PNG"
+                  alt="decor border"
+                  className="w-full max-w-[95%] sm:max-w-[90%] md:max-w-[80%]"
+                />
+              </div>
+
               {restaurantInfo.address.lines.map(
                 (line: string, idx: number) => (
                   <p key={idx}>{line}</p>
@@ -285,15 +298,26 @@ const ContactPage = () => {
             </div>
           )}
 
+          {/* FRANCHISE */}
           {restaurantInfo?.franchise?.active && (
-            <div>
-              <h3 className="font-semibold text-lg">
+            <div className="w-full">
+              <h2 className="font-bold text-secondary">
                 Enquire About Getting a Franchise
-              </h3>
+              </h2>
+
+              <div className="flex justify-center mb-6">
+                <img
+                  src="/Images/heading_main.PNG"
+                  alt="decor border"
+                  className="w-full max-w-[95%] sm:max-w-[90%] md:max-w-[80%]"
+                />
+              </div>
+
               <p>Tel. {restaurantInfo.franchise.phone}</p>
             </div>
           )}
         </motion.div>
+
       </div>
     </motion.div>
   );

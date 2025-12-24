@@ -15,4 +15,5 @@
 # env files
 .env*
 
+# firebase service account
 .serviceAccountKey.json
